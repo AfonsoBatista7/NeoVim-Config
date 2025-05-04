@@ -4,8 +4,8 @@ return function ()
 
     local servers = {
         "lua_ls",
+        "solidity_ls_nomicfoundation",
         -- "clang",
-        -- "solidity_ls_nomicfoundation",
         -- "rust_analyzer",
     }
 
@@ -21,8 +21,7 @@ return function ()
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
-
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
         vim.keymap.set('n', 'C-k', vim.lsp.buf.signature_help, {})
 
         vim.keymap.set('n', 'gR', vim.lsp.buf.references, {})
@@ -55,9 +54,23 @@ return function ()
     require('lspconfig').solidity_ls_nomicfoundation.setup{
         cmd = {'nomicfoundation-solidity-language-server', '--stdio'},
         filetypes = { 'solidity' },
-        require("lspconfig.util").root_pattern "foundry.toml",
+        on_attach = attach_function,
+        require('lspconfig.util').root_pattern "foundry.toml",
         single_file_support = true,
     }
+
+--  local solhint = require("efmls-configs.linters.solhint")
+
+--  lspconfig.efm.setup({
+--      filetypes = {
+--          "solidity"
+--      },
+--      settings = {
+--          languages = {
+--              solidity = { solhint }
+--          }
+--      }
+--  })
 
     add_capabilities()
 end
