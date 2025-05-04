@@ -17,7 +17,7 @@ vim.opt.hlsearch = true
 vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
-vim.opt.wildmode = 'longest,list,full' 
+vim.opt.wildmode = 'longest,list,full'
 vim.opt.wildmenu = true
 
 vim.opt.laststatus=2
@@ -30,8 +30,8 @@ vim.opt.fillchars = {
   vert = " ", -- set vsplit chars
 }
 
-vim.opt.guicursor = vim.opt.guicursor + 'a:-Cursor-blinkwait155-blinkoff130-blinkon155'
-vim.api.nvim_set_hl(0, 'Cursor', {reverse=true,bg='NONE',fg='NONE'})
+vim.api.nvim_set_hl(0, 'LineNr', {fg='#BFBFBF'})
+vim.api.nvim_set_hl(0, 'CursorLineNr', {fg='#FFFFFF'})
 vim.opt.breakindent = true
 vim.opt.encoding='utf-8'
 vim.opt.updatetime=750
@@ -43,7 +43,6 @@ vim.opt.wrap = true
 vim.opt.swapfile = false
 vim.opt.signcolumn='yes'
 vim.opt.number = true
-vim.opt.wrap = false
 vim.opt.rnu = true
 vim.opt.mouse='a'
 vim.opt.so = 5

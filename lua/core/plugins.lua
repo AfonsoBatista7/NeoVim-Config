@@ -121,7 +121,10 @@ require("lazy").setup({
       config = conf('todo-comments')
     },
 	-- Tmux Navigation
-    {'christoomey/vim-tmux-navigator'},
+    {
+        'christoomey/vim-tmux-navigator',
+        lazy = false,
+    },
     {'simeji/winresizer',
         init = function() vim.g.winresizer_start_key = '<C-p>' end
     },
