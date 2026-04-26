@@ -2,13 +2,10 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
+		"clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git",
 		"--branch=stable", -- latest stable release
 		lazypath,
-	})
-end
+	}) end
 vim.opt.rtp:prepend(lazypath)
 
 -- Sets up Lazy Plugin Manager
@@ -20,16 +17,28 @@ end
 
 require("lazy").setup({
     {
-       "lervag/vimtex",
-       lazy = false,     -- we don't want to lazy load VimTeX
-       config = conf("vimtex"),
+        "TheSnakeWitcher/hardhat.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-neotest/neotest",
+            "nvim-telescope/telescope.nvim",
+            "stevearc/overseer.nvim",
+        },
     },
+    {'nvim-lua/plenary.nvim'},
+    {'stevearc/overseer.nvim'},
+    { 'wakatime/vim-wakatime', lazy = false },
     {
 	-- Main Color Scheme
 	"catppuccin/nvim",
 	name="catppuccin",
 	priority=1000,
 	config = conf("catppuccin"),
+    },
+    {
+       "lervag/vimtex",
+       lazy = false,     -- we don't want to lazy load VimTeX
+       config = conf("vimtex"),
     },
     {
 	-- File tree
@@ -63,7 +72,7 @@ require("lazy").setup({
         config = conf("telescope-browser")
     },
     -- LSP Support
-    { "williamboman/mason.nvim" },
+    { "williamboman/mason.nvim", version= '2.0.0' },
     { "williamboman/mason-lspconfig.nvim" },
     {
 	"neovim/nvim-lspconfig",

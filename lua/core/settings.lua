@@ -22,8 +22,7 @@ vim.opt.wildmenu = true
 
 vim.opt.laststatus=2
 vim.opt.ruler = true
-vim.opt.showcmd = true
-vim.opt.showmode = true
+vim.opt.showcmd = true vim.opt.showmode = true
 
 vim.opt.fillchars = {
   fold = " ", -- remove folding chars
@@ -32,6 +31,7 @@ vim.opt.fillchars = {
 
 vim.opt.guicursor = vim.opt.guicursor + 'a:-Cursor-blinkwait155-blinkoff130-blinkon155'
 vim.api.nvim_set_hl(0, 'Cursor', {reverse=true,bg='NONE',fg='NONE'})
+vim.api.nvim_set_hl(0, 'LineNr', { fg='#ffffff',bold=true})
 vim.opt.breakindent = true
 vim.opt.encoding='utf-8'
 vim.opt.updatetime=750

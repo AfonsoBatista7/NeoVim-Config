@@ -11,7 +11,7 @@ return function ()
 	    dim_inactive = {
 		enabled = false, -- dims the background color of inactive window
 		shade = "dark",
-		percentage = 0.15, -- percentage of the shade to apply to the inactive window
+		percentage = 0.25, -- percentage of the shade to apply to the inactive window
 	    },
 	    no_italic = false, -- Force no italic
 	    no_bold = false, -- Force no bold
@@ -30,8 +30,11 @@ return function ()
 		types = {},
 		operators = {},
 	    },
-	    color_overrides = {},
-	    custom_highlights = {},
+	    color_overrides = { },
+	    custom_highlights = {
+                LineNr = { fg =  "#ffffff", bold = true },
+                CursorLineNr = { fg="#dddddd", bold = true },
+            },
 	    integrations = {
 		cmp = true,
 		gitsigns = true,

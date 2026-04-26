@@ -11,8 +11,8 @@ keymaps.set('n', '˙', 'gT')
 
 -- Line Moving Keybinds
 keymaps.set('n', '∆', ':m .+1<CR>==')
-keymaps.set('n', '˚', ':m .-2<CR>==')
 keymaps.set('i', '∆', '<Esc>:m .+1<CR>==gi')
+keymaps.set('n', '˚', ':m .-2<CR>==')
 keymaps.set('i', '˚', '<Esc>:m .-2<CR>==gi')
 keymaps.set('v', '∆', "'>+1<CR>gv=gv")
 keymaps.set('v', '˚', "'<-2<CR>gv=gv")
